@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ScannerViewController.h
 //  TicketScanner
 //
 //  Created by Aaron Robinson on 2/26/15.
