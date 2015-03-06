@@ -13,7 +13,9 @@
 @property(nonatomic) NSMutableURLRequest *request;
 @property(nonatomic) NSURLConnection *connection;
 
-@property(nonatomic) NSString *postDataString;
+//@property(nonatomic) NSMutableArray *postDataEntries;
+@property(nonatomic) NSString *postDataBody;
+@property(nonatomic) NSString *postDataTail;
 @property(nonatomic) NSMutableData *receivedData;
 
 @property(nonatomic) NSString *studentId;
@@ -34,7 +36,7 @@
     [super viewDidLoad];
     
     // If there is a connection going on, cancel it
-    [self.connection cancel];
+    //[self.connection cancel];
     
     // init new mutable data
     self.receivedData = [[NSMutableData alloc] init];
@@ -45,13 +47,16 @@
     self.lastName = @"Robinson";
     self.enrollmentType = @"Transfer";
     self.studentIdEntry = [NSString stringWithFormat:@"entry.2010109242=%@", self.studentId];
-    self.firstNameEntry = [NSString stringWithFormat:@"entry.280111864=%@", self.firstName];
-    self.lastNameEntry = [NSString stringWithFormat:@"entry.704921569=%@", self.lastName];
-    self.enrollmentTypeEntry = [NSString stringWithFormat:@"entry.213545887=%@", self.enrollmentType];
+    self.firstNameEntry = [NSString stringWithFormat:@"&entry.280111864=%@", self.firstName];
+    self.lastNameEntry = [NSString stringWithFormat:@"&entry.704921569=%@", self.lastName];
+    self.enrollmentTypeEntry = [NSString stringWithFormat:@"&entry.213545887=%@", self.enrollmentType];
+    self.postDataTail = @"&draftResponse=[,,\"0\"]&pageHistory=0&fbzx=0";
     
     // create POST data string
-    self.postDataString = [NSString stringWithFormat:@"%@%@%@%@",
-                           self.studentIdEntry, self.firstNameEntry, self.lastNameEntry, self.enrollmentTypeEntry];
+    self.postDataBody = [NSString stringWithFormat:@"%@%@%@%@%@",
+                         self.studentIdEntry, self.firstNameEntry, self.lastNameEntry,
+                         self.enrollmentTypeEntry, self.postDataTail];
+    NSLog(@"%@", self.postDataBody);
     
     // init POST URL that will be fetched
     self.postURL = [NSURL URLWithString:@"https://docs.google.com/forms/d/1-q7M81pv8Q_c0XazDr-mrhUxWfN5nvub71VH_pA-JJk/formResponse"];
@@ -60,10 +65,11 @@
     self.request = [NSMutableURLRequest requestWithURL:[self.postURL standardizedURL]];
     
     // set HTTP method
-    [self.request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [self.request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-type"];
     
     // set POST data of request
-    self.request.HTTPBody = [self.postDataString dataUsingEncoding:NSUTF8StringEncoding];
+    self.request.HTTPBody = [self.postDataBody dataUsingEncoding:NSUTF8StringEncoding];
+    self.request.HTTPMethod = @"POST";
     
     // init a connection from request
     self.connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self];
