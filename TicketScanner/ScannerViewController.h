@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  ScannerViewController.h
 //  TicketScanner
 //
 //  Created by Aaron Robinson on 2/26/15.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DatabaseCommunicator.h"
 
-@interface SecondViewController : UIViewController
+@interface ScannerViewController : UIViewController
 
 
 @end

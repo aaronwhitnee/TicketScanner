@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */; };
 		0C9874B21AA04DB9006A2F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B11AA04DB9006A2F9A /* main.m */; };
 		0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B41AA04DB9006A2F9A /* AppDelegate.m */; };
-		0C9874B81AA04DB9006A2F9A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B71AA04DB9006A2F9A /* FirstViewController.m */; };
-		0C9874BB1AA04DB9006A2F9A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874BA1AA04DB9006A2F9A /* SecondViewController.m */; };
+		0C9874B81AA04DB9006A2F9A /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */; };
+		0C9874BB1AA04DB9006A2F9A /* ManualCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */; };
 		0C9874BE1AA04DB9006A2F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9874BC1AA04DB9006A2F9A /* Main.storyboard */; };
 		0C9874C01AA04DB9006A2F9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9874BF1AA04DB9006A2F9A /* Images.xcassets */; };
 		0C9874C31AA04DB9006A2F9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C9874C11AA04DB9006A2F9A /* LaunchScreen.xib */; };
@@ -28,15 +29,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C34386B1AA93E8B002E1ED5 /* DatabaseCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseCommunicator.h; sourceTree = "<group>"; };
+		0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseCommunicator.m; sourceTree = "<group>"; };
 		0C9874AC1AA04DB9006A2F9A /* TicketScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9874B01AA04DB9006A2F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C9874B11AA04DB9006A2F9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C9874B31AA04DB9006A2F9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0C9874B41AA04DB9006A2F9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0C9874B61AA04DB9006A2F9A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		0C9874B71AA04DB9006A2F9A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		0C9874B91AA04DB9006A2F9A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		0C9874BA1AA04DB9006A2F9A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0C9874B61AA04DB9006A2F9A /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		0C9874B91AA04DB9006A2F9A /* ManualCheckinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManualCheckinViewController.h; sourceTree = "<group>"; };
+		0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManualCheckinViewController.m; sourceTree = "<group>"; };
 		0C9874BD1AA04DB9006A2F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C9874BF1AA04DB9006A2F9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C9874C21AA04DB9006A2F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,10 +89,12 @@
 			children = (
 				0C9874B31AA04DB9006A2F9A /* AppDelegate.h */,
 				0C9874B41AA04DB9006A2F9A /* AppDelegate.m */,
-				0C9874B61AA04DB9006A2F9A /* FirstViewController.h */,
-				0C9874B71AA04DB9006A2F9A /* FirstViewController.m */,
-				0C9874B91AA04DB9006A2F9A /* SecondViewController.h */,
-				0C9874BA1AA04DB9006A2F9A /* SecondViewController.m */,
+				0C9874B61AA04DB9006A2F9A /* ScannerViewController.h */,
+				0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */,
+				0C9874B91AA04DB9006A2F9A /* ManualCheckinViewController.h */,
+				0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */,
+				0C34386B1AA93E8B002E1ED5 /* DatabaseCommunicator.h */,
+				0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */,
 				0C9874BC1AA04DB9006A2F9A /* Main.storyboard */,
 				0C9874BF1AA04DB9006A2F9A /* Images.xcassets */,
 				0C9874C11AA04DB9006A2F9A /* LaunchScreen.xib */,
@@ -224,10 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9874BB1AA04DB9006A2F9A /* SecondViewController.m in Sources */,
+				0C9874BB1AA04DB9006A2F9A /* ManualCheckinViewController.m in Sources */,
 				0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */,
-				0C9874B81AA04DB9006A2F9A /* FirstViewController.m in Sources */,
+				0C9874B81AA04DB9006A2F9A /* ScannerViewController.m in Sources */,
 				0C9874B21AA04DB9006A2F9A /* main.m in Sources */,
+				0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +426,7 @@
 				0C9874D41AA04DB9006A2F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C9874D51AA04DB9006A2F9A /* Build configuration list for PBXNativeTarget "TicketScannerTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +435,7 @@
 				0C9874D71AA04DB9006A2F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  ScannerViewController.h
+//  ManualCheckinViewController.m
 //  TicketScanner
 //
 //  Created by Aaron Robinson on 2/26/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface ManualCheckinViewController : UIViewController
 
 
 @end
