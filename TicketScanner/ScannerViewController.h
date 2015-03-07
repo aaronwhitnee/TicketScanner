@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DatabaseCommunicator.h"
+#import "QRCodeCaptureView.h"
 
 @interface ScannerViewController : UIViewController
 

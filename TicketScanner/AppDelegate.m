@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ScannerViewController.h"
+#import "ManualCheckinViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UITabBarController *tabs = [[UITabBarController alloc] init];
+
+    ScannerViewController *svc = [[ScannerViewController alloc] init];
+    ManualCheckinViewController *mvc = [[ManualCheckinViewController alloc] init];
+    
+    UIImage *img1 = [UIImage imageNamed:@"first"];
+    UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle:@"Scan Ticket" image:img1 selectedImage:img1];
+    svc.tabBarItem = firstTab;
+    
+    UIImage *img2 = [UIImage imageNamed:@"second"];
+    UITabBarItem *secondTab = [[UITabBarItem alloc] initWithTitle:@"Manual Check-In" image:img2 selectedImage:img2];
+    mvc.tabBarItem = secondTab;
+    
+    [tabs addChildViewController:svc];
+    [tabs addChildViewController:mvc];
+    
+    self.window.rootViewController = tabs;
+    
     return YES;
 }
 
