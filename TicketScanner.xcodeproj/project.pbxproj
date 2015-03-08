@@ -15,6 +15,7 @@
 		0C9874C01AA04DB9006A2F9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9874BF1AA04DB9006A2F9A /* Images.xcassets */; };
 		0C9874CF1AA04DB9006A2F9A /* TicketScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874CE1AA04DB9006A2F9A /* TicketScannerTests.m */; };
 		0CA73F791AAB92640049060D /* QRCodeCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA73F781AAB92640049060D /* QRCodeCaptureView.m */; };
+		0CA73F7E1AABC22C0049060D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA73F7D1AABC22C0049060D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		0C9874CE1AA04DB9006A2F9A /* TicketScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketScannerTests.m; sourceTree = "<group>"; };
 		0CA73F771AAB92640049060D /* QRCodeCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeCaptureView.h; sourceTree = "<group>"; };
 		0CA73F781AAB92640049060D /* QRCodeCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeCaptureView.m; sourceTree = "<group>"; };
+		0CA73F7D1AABC22C0049060D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA73F7E1AABC22C0049060D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,7 @@
 		0C9874A31AA04DB9006A2F9A = {
 			isa = PBXGroup;
 			children = (
+				0CA73F7D1AABC22C0049060D /* AVFoundation.framework */,
 				0C9874AE1AA04DB9006A2F9A /* TicketScanner */,
 				0C9874CB1AA04DB9006A2F9A /* TicketScannerTests */,
 				0C9874AD1AA04DB9006A2F9A /* Products */,

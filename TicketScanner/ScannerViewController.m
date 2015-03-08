@@ -46,6 +46,7 @@
     [self.view addSubview:self.scannerView];
     
     self.startStopButton.center = CGPointMake(window.size.width / 2, window.size.height - 90);
+    [self.startStopButton addTarget:self action:@selector(startStopReading:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.startStopButton];
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -65,20 +66,28 @@
     [_startStopButton setTitle:@"SCAN" forState:UIControlStateNormal];
     _startStopButton.titleLabel.textColor = [UIColor whiteColor];
     _startStopButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _startStopButton.backgroundColor = [UIColor purpleColor];
+    _startStopButton.backgroundColor = [UIColor blueColor];
     _startStopButton.clipsToBounds = YES;
     _startStopButton.layer.cornerRadius = 10.0;
     
     return _startStopButton;
 }
 
-//-(void) startStopReading {
-//    if (!self.scannerView.isReading) {
-//        if ([self.scannerView startReading]) {
-//            self.scannerView.scannerMessageLabel.text = @"Scanning QR Code...";
-//
-//        }
-//    }
-//}
+-(void) startStopReading:(UIButton *)sender {
+    if (!self.scannerView.isReading) {
+        if ([self.scannerView startReading]) {
+            self.scannerView.scannerMessageLabel.text = @"Scanning QR Code...";
+            [self.startStopButton setTitle:@"DONE" forState:UIControlStateNormal];
+            self.startStopButton.backgroundColor = [UIColor redColor];
+        }
+    }
+    else {
+        [self.scannerView stopReading];
+        [self.startStopButton setTitle:@"SCAN" forState:UIControlStateNormal];
+        self.startStopButton.backgroundColor = [UIColor blueColor];
+    }
+    
+    self.scannerView.isReading = !self.scannerView.isReading;
+}
 
 @end
