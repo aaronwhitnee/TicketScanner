@@ -17,7 +17,7 @@
 @property(nonatomic) DatabaseCommunicator *dbCommunicator;
 
 @property(nonatomic) UIButton *startStopButton;
-@property(nonatomic) UIActivityIndicatorView *activityIndicator;
+@property(nonatomic) UIActivityIndicatorView *activityIndicator; // TO DO: Implement activity indicator
 @end
 
 @implementation ScannerViewController
@@ -46,8 +46,10 @@
     [self.view addSubview:self.scannerView];
     
     self.startStopButton.center = CGPointMake(window.size.width / 2, window.size.height - 90);
-    [self.startStopButton addTarget:self action:@selector(startStopReading:) forControlEvents:UIControlEventTouchUpInside];
+    [self.startStopButton addTarget:self action:@selector(startStopReading) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.startStopButton];
+    
+    [self.view addSubview:self.activityIndicator];
     
     self.view.backgroundColor = [UIColor whiteColor];
 }
@@ -78,16 +80,20 @@
         return _activityIndicator;
     }
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _activityIndicator.center = self.view.center;
+    _activityIndicator.frame = self.view.frame;
+    _activityIndicator.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
+    _activityIndicator.hidesWhenStopped = YES;
     return _activityIndicator;
 }
 
--(void) startStopReading:(UIButton *)sender {
+-(void) startStopReading {
     if (!self.scannerView.isReading) {
         if ([self.scannerView startReading]) {
             self.scannerView.scannerMessageLabel.text = @"Scanning QR Code...";
             [self.startStopButton setTitle:@"DONE" forState:UIControlStateNormal];
             self.startStopButton.backgroundColor = [UIColor redColor];
+            // TO DO: only display activity indicator AFTER a connection has started
+            [self.activityIndicator startAnimating];
             [self.dbCommunicator postData:self.studentAttributes toURL:self.postURL];
         }
     }
@@ -100,7 +106,9 @@
 }
 
 -(void) studentDataDidFinishUploading {
+    // this is where you would play an audible sound to confirm successful scan...
     [self.activityIndicator stopAnimating];
+    [self startStopReading];
     NSLog(@"Scanned data uploaded to database successfully.");
 }
 
