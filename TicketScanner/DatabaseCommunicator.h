@@ -1,5 +1,5 @@
 //
-//  SpreadsheetHandler.h
+//  DatabaseCommunicator.h
 //  TicketScanner
 //
 //  Created by Aaron Robinson on 3/5/15.
@@ -8,7 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DatabaseCommunicator : NSObject
--(void) postData:(NSMutableArray *)data toURL:(NSURL *)url;
+@protocol ConnectionFinishedDelegate;
+
+@interface DatabaseCommunicator : NSObject <NSURLConnectionDelegate>
+
+@property(nonatomic, weak) id<ConnectionFinishedDelegate> delegate;
+
++ (DatabaseCommunicator *) sharedDatabase;
+- (void) postData:(NSMutableArray *)data toURL:(NSURL *)url;
 
 @end
+
+@protocol ConnectionFinishedDelegate <NSObject>
+@required
+-(void) studentDataDidFinishUploading;
+@end
+

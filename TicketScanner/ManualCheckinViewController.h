@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DatabaseCommunicator.h"
 
-@interface ManualCheckinViewController : UIViewController
+@interface ManualCheckinViewController : UITableViewController <ConnectionFinishedDelegate>
 
 
 @end

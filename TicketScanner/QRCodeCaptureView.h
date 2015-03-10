@@ -9,16 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface QRCodeCaptureView : UIView <AVCaptureMetadataOutputObjectsDelegate>
-@property(nonatomic) BOOL isReading;
+@protocol ScannedDataReadyForUseDelegate;
 
+@interface QRCodeCaptureView : UIView <AVCaptureMetadataOutputObjectsDelegate>
+
+@property(nonatomic) BOOL isReading;
 @property(nonatomic) UILabel *scannerMessageLabel;
-@property(nonatomic) NSString *scannerMessageString;
 @property(nonatomic) AVCaptureSession *videoCaptureSession;
 @property(nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property(nonatomic, weak) id<ScannedDataReadyForUseDelegate> delegate;
 
 -(instancetype) initWithFrame:(CGRect)frame message:(NSString *)message;
-
 -(BOOL) startReading;
 -(void) stopReading;
+
+@end
+
+@protocol ScannedDataReadyForUseDelegate <NSObject>
+@required
+-(void) acceptScannedData:(NSArray *)metadataObjects;
 @end

@@ -22,7 +22,7 @@
     UITabBarController *tabs = [[UITabBarController alloc] init];
 
     ScannerViewController *svc = [[ScannerViewController alloc] init];
-    ManualCheckinViewController *mvc = [[ManualCheckinViewController alloc] init];
+    ManualCheckinViewController *mvc = [[ManualCheckinViewController alloc] initWithStyle:UITableViewStylePlain];
     
     UIImage *img1 = [UIImage imageNamed:@"first"];
     UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle:@"Scan Ticket" image:img1 selectedImage:img1];

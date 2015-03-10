@@ -10,14 +10,35 @@
 
 @interface ManualCheckinViewController ()
 
+@property(nonatomic) DatabaseCommunicator *dbCommunicator;
+@property(nonatomic) UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation ManualCheckinViewController
 
+- (instancetype) initWithStyle:(UITableViewStyle)style {
+    if ((self = [super initWithStyle:style]) == nil) {
+        return nil;
+    }
+    self.dbCommunicator = [DatabaseCommunicator sharedDatabase];
+    self.dbCommunicator.delegate = self;
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    // configure table cells...
+
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+}
+
+-(void) studentDataDidFinishUploading {
+    NSLog(@"Student data uploaded to database successfully.");
 }
 
 - (void)didReceiveMemoryWarning {
