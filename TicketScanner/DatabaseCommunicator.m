@@ -78,7 +78,7 @@
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *) connection {
-    NSLog(@"Finished sending %li bytes.", [self.request.HTTPBody length]);
+    NSLog(@"Finished sending %@ bytes.", @([self.request.HTTPBody length]));
     NSString *dataString = [[NSString alloc] initWithData:self.request.HTTPBody encoding:NSUTF8StringEncoding];
     NSLog(@"%@", dataString);
     if ([self.delegate respondsToSelector:@selector(studentDataDidFinishUploading)]) {

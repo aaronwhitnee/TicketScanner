@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FXForms.h"
+#import "ManualCheckinForm.h"
 #import "DatabaseCommunicator.h"
 
-@interface ManualCheckinViewController : UITableViewController <ConnectionFinishedDelegate>
+@interface ManualCheckinFormViewController : FXFormViewController <ConnectionFinishedDelegate>
 
 
 @end
-

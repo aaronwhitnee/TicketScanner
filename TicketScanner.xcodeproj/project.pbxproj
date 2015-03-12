@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1128081AB11B3700FD8C61 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1128071AB11B3700FD8C61 /* FXForms.m */; };
+		0C11280B1AB11D6C00FD8C61 /* ManualCheckinForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C11280A1AB11D6C00FD8C61 /* ManualCheckinForm.m */; };
+		0C11280E1AB16F7000FD8C61 /* CustomButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */; };
 		0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */; };
 		0C9874B21AA04DB9006A2F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B11AA04DB9006A2F9A /* main.m */; };
 		0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B41AA04DB9006A2F9A /* AppDelegate.m */; };
@@ -29,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1128061AB11B3700FD8C61 /* FXForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
+		0C1128071AB11B3700FD8C61 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
+		0C1128091AB11D6C00FD8C61 /* ManualCheckinForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualCheckinForm.h; sourceTree = "<group>"; };
+		0C11280A1AB11D6C00FD8C61 /* ManualCheckinForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualCheckinForm.m; sourceTree = "<group>"; };
+		0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButtonCell.h; sourceTree = "<group>"; };
+		0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButtonCell.m; sourceTree = "<group>"; };
 		0C34386B1AA93E8B002E1ED5 /* DatabaseCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseCommunicator.h; sourceTree = "<group>"; };
 		0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseCommunicator.m; sourceTree = "<group>"; };
 		0C9874AC1AA04DB9006A2F9A /* TicketScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +47,7 @@
 		0C9874B41AA04DB9006A2F9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0C9874B61AA04DB9006A2F9A /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
-		0C9874B91AA04DB9006A2F9A /* ManualCheckinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManualCheckinViewController.h; sourceTree = "<group>"; };
+		0C9874B91AA04DB9006A2F9A /* ManualCheckinFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManualCheckinFormViewController.h; sourceTree = "<group>"; };
 		0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManualCheckinViewController.m; sourceTree = "<group>"; };
 		0C9874BF1AA04DB9006A2F9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C9874C81AA04DB9006A2F9A /* TicketScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,13 +77,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1128051AB11B3700FD8C61 /* FXForms */ = {
+			isa = PBXGroup;
+			children = (
+				0C1128061AB11B3700FD8C61 /* FXForms.h */,
+				0C1128071AB11B3700FD8C61 /* FXForms.m */,
+			);
+			path = FXForms;
+			sourceTree = "<group>";
+		};
+		0C11280F1AB17CE000FD8C61 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C9874B61AA04DB9006A2F9A /* ScannerViewController.h */,
+				0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */,
+				0C9874B91AA04DB9006A2F9A /* ManualCheckinFormViewController.h */,
+				0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */,
+			);
+			name = ViewControllers;
+			path = TicketScanner;
+			sourceTree = "<group>";
+		};
 		0C9874A31AA04DB9006A2F9A = {
 			isa = PBXGroup;
 			children = (
-				0CA73F7D1AABC22C0049060D /* AVFoundation.framework */,
+				0C1128051AB11B3700FD8C61 /* FXForms */,
+				0C11280F1AB17CE000FD8C61 /* ViewControllers */,
 				0C9874AE1AA04DB9006A2F9A /* TicketScanner */,
 				0C9874CB1AA04DB9006A2F9A /* TicketScannerTests */,
 				0C9874AD1AA04DB9006A2F9A /* Products */,
+				0CA73F7D1AABC22C0049060D /* AVFoundation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,14 +124,14 @@
 			children = (
 				0C9874B31AA04DB9006A2F9A /* AppDelegate.h */,
 				0C9874B41AA04DB9006A2F9A /* AppDelegate.m */,
+				0C1128091AB11D6C00FD8C61 /* ManualCheckinForm.h */,
+				0C11280A1AB11D6C00FD8C61 /* ManualCheckinForm.m */,
 				0C34386B1AA93E8B002E1ED5 /* DatabaseCommunicator.h */,
 				0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */,
-				0C9874B61AA04DB9006A2F9A /* ScannerViewController.h */,
-				0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */,
-				0C9874B91AA04DB9006A2F9A /* ManualCheckinViewController.h */,
-				0C9874BA1AA04DB9006A2F9A /* ManualCheckinViewController.m */,
 				0CA73F771AAB92640049060D /* QRCodeCaptureView.h */,
 				0CA73F781AAB92640049060D /* QRCodeCaptureView.m */,
+				0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */,
+				0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */,
 				0C9874BF1AA04DB9006A2F9A /* Images.xcassets */,
 				0C9874AF1AA04DB9006A2F9A /* Supporting Files */,
 			);
@@ -234,6 +266,9 @@
 				0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */,
 				0C9874B81AA04DB9006A2F9A /* ScannerViewController.m in Sources */,
 				0C9874B21AA04DB9006A2F9A /* main.m in Sources */,
+				0C11280E1AB16F7000FD8C61 /* CustomButtonCell.m in Sources */,
+				0C1128081AB11B3700FD8C61 /* FXForms.m in Sources */,
+				0C11280B1AB11D6C00FD8C61 /* ManualCheckinForm.m in Sources */,
 				0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */,
 				0CA73F791AAB92640049060D /* QRCodeCaptureView.m in Sources */,
 			);

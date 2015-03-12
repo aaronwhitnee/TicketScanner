@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ScannerViewController.h"
-#import "ManualCheckinViewController.h"
+#import "ManualCheckinFormViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,7 @@
     UITabBarController *tabs = [[UITabBarController alloc] init];
 
     ScannerViewController *svc = [[ScannerViewController alloc] init];
-    ManualCheckinViewController *mvc = [[ManualCheckinViewController alloc] initWithStyle:UITableViewStylePlain];
+    ManualCheckinFormViewController *mvc = [[ManualCheckinFormViewController alloc] init];
     
     UIImage *img1 = [UIImage imageNamed:@"first"];
     UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle:@"Scan Ticket" image:img1 selectedImage:img1];

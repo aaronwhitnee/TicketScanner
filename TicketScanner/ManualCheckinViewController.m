@@ -6,44 +6,37 @@
 //  Copyright (c) 2015 SSU. All rights reserved.
 //
 
-#import "ManualCheckinViewController.h"
+#import "ManualCheckinFormViewController.h"
 
-@interface ManualCheckinViewController ()
+@interface ManualCheckinFormViewController ()
 
 @property(nonatomic) DatabaseCommunicator *dbCommunicator;
 @property(nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
-@implementation ManualCheckinViewController
 
-- (instancetype) initWithStyle:(UITableViewStyle)style {
-    if ((self = [super initWithStyle:style]) == nil) {
+@implementation ManualCheckinFormViewController
+
+-(id) init {
+    if ((self = [super init]) == nil) {
         return nil;
     }
-    self.dbCommunicator = [DatabaseCommunicator sharedDatabase];
-    self.dbCommunicator.delegate = self;
-    
+    self.formController.form = [[ManualCheckinForm alloc] init];
+    self.formController.delegate = self;
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void) submitManualCheckinForm {
+    // The form being submitted
+    [[[UIAlertView alloc] initWithTitle:@"Student Checked In!" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show];
 
-    // configure table cells...
-
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityIndicator.center = self.view.center;
-    [self.view addSubview:self.activityIndicator];
 }
+
+// validate form by checking all fields
 
 -(void) studentDataDidFinishUploading {
     NSLog(@"Student data uploaded to database successfully.");
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
