@@ -9,16 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "FXForms.h"
 
-typedef NS_ENUM(NSInteger, EnrollmentType) {
-    EnrollmentFreshman = 0,
-    EnrollmentTransfer
-};
-
 @interface ManualCheckinForm : NSObject <FXForm>
 
+@property(nonatomic) NSArray *fields;
 @property(nonatomic, copy) NSString *firstName;
 @property(nonatomic, copy) NSString *lastName;
 @property(nonatomic, copy) NSString *email;
-@property(nonatomic, assign) EnrollmentType enrollmentType;
+@property(nonatomic, assign) FXFormOptionSegmentsCell *enrollmentType;
 
 @end

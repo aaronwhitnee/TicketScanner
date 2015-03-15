@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
 #import "ScannerViewController.h"
 #import "ManualCheckinFormViewController.h"
 
@@ -19,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UITabBarController *tabs = [[UITabBarController alloc] init];
+    TabBarController *tabs = [[TabBarController alloc] init];
 
     ScannerViewController *svc = [[ScannerViewController alloc] init];
     ManualCheckinFormViewController *mvc = [[ManualCheckinFormViewController alloc] init];
@@ -31,6 +32,9 @@
     UIImage *img2 = [UIImage imageNamed:@"second"];
     UITabBarItem *secondTab = [[UITabBarItem alloc] initWithTitle:@"Manual Check-In" image:img2 selectedImage:img2];
     mvc.tabBarItem = secondTab;
+    
+    // TODO: Add a new ViewController for tracking and displaying live guest statistics (based on data
+    // that the user is collecting from guests)
     
     [tabs addChildViewController:svc];
     [tabs addChildViewController:mvc];

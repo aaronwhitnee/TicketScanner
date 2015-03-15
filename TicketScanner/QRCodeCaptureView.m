@@ -7,6 +7,11 @@
 //
 
 #import "QRCodeCaptureView.h"
+#import "ActivityIndicatorView.h"
+
+@interface QRCodeCaptureView()
+@property(nonatomic) ActivityIndicatorView *activityIndicator;
+@end
 
 @implementation QRCodeCaptureView
 
@@ -17,6 +22,8 @@
     
     self.frame = frame;
     self.backgroundColor = [UIColor blackColor];
+    
+    [self addSubview:self.activityIndicator];
     
     CGRect messageFrame = CGRectMake(0, 0, frame.size.width * 0.8, 20.0);
     self.scannerMessageLabel = [[UILabel alloc] initWithFrame:messageFrame];
@@ -34,6 +41,8 @@
 }
 
 -(BOOL) startReading {
+    self.scannerMessageLabel.text = @"";
+    [self.activityIndicator startAnimating];
 //    NSError *readingError = [[NSError alloc] init];
 //    
 //    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -59,16 +68,17 @@
 //    [self.layer addSublayer:self.videoPreviewLayer];
 //    
 //    [self.videoCaptureSession startRunning];
-    self.backgroundColor = [UIColor grayColor];
     
     return YES;
 }
 
 -(void) stopReading {
+    [self.activityIndicator stopAnimating];
     self.backgroundColor = [UIColor blackColor];
     self.scannerMessageLabel.text = @"Tap SCAN Button";
 }
 
+// Called when the Scanner has successfully read data from the QR code
 -(void) captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     if (metadataObjects && [metadataObjects count]) {
         // pass scanned metadata back to the main ScannerViewController
@@ -76,6 +86,15 @@
             [self.delegate acceptScannedData:metadataObjects];
         }
     }
+}
+
+-(ActivityIndicatorView *) activityIndicator {
+    if(_activityIndicator) {
+        return _activityIndicator;
+    }
+    _activityIndicator = [[ActivityIndicatorView alloc] initWithFrame:self.frame];
+    _activityIndicator.center = self.center;
+    return _activityIndicator;
 }
 
 @end

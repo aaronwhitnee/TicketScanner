@@ -15,7 +15,7 @@
 @property(nonatomic, weak) id<ConnectionFinishedDelegate> delegate;
 
 + (DatabaseCommunicator *) sharedDatabase;
-- (void) postData:(NSMutableArray *)data toURL:(NSURL *)url;
+- (void) postData:(NSArray *)data toURL:(NSURL *)url;
 
 @end
 

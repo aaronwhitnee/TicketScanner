@@ -17,7 +17,6 @@
 @property(nonatomic) NSString *postDataTail;
 @property(nonatomic) NSMutableData *receivedData;
 
-@property(nonatomic) NSString *studentIdEntry;
 @property(nonatomic) NSString *firstNameEntry;
 @property(nonatomic) NSString *lastNameEntry;
 @property(nonatomic) NSString *enrollmentTypeEntry;
@@ -41,21 +40,20 @@
         [_connection cancel];
     }
     
-    // init new mutable data
-    self.receivedData = [[NSMutableData alloc] init];
+    // init new mutable data (we're not receiving any data in this case)
+    //  self.receivedData = [[NSMutableData alloc] init];
     
     // Create post data with attributes scanned from QR code
-    self.studentIdEntry = [NSString stringWithFormat:@"entry.2010109242=%@", data[0]];
-    self.firstNameEntry = [NSString stringWithFormat:@"&entry.280111864=%@", data[1]];
-    self.lastNameEntry = [NSString stringWithFormat:@"&entry.704921569=%@", data[2]];
+    self.firstNameEntry = [NSString stringWithFormat:@"entry.280111864=%@", data[0]];
+    self.lastNameEntry = [NSString stringWithFormat:@"&entry.704921569=%@", data[1]];
+    self.emailEntry = [NSString stringWithFormat:@"&entry.1983486187=%@", data[2]];
     self.enrollmentTypeEntry = [NSString stringWithFormat:@"&entry.213545887=%@", data[3]];
-    self.emailEntry = [NSString stringWithFormat:@"&entry.1983486187=%@", data[4]];
     self.postDataTail = @"&draftResponse=[,,\"0\"]&pageHistory=0&fbzx=0";
 
     // create POST data string
-    self.postDataBody = [NSString stringWithFormat:@"%@%@%@%@%@%@",
-                         self.studentIdEntry, self.firstNameEntry, self.lastNameEntry,
-                         self.enrollmentTypeEntry, self.emailEntry, self.postDataTail];
+    self.postDataBody = [NSString stringWithFormat:@"%@%@%@%@%@",
+                         self.firstNameEntry, self.lastNameEntry,
+                        self.emailEntry, self.enrollmentTypeEntry, self.postDataTail];
     
     // init POST URL that will be fetched
     self.url = url;

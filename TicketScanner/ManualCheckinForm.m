@@ -16,25 +16,29 @@
     NSMutableArray *fieldsArray = [[NSMutableArray alloc] init];
     
     [fieldsArray addObject: @{FXFormFieldKey: @"firstName",
-                              FXFormFieldPlaceholder: @"First",
+                              FXFormFieldPlaceholder: @"First Name",
                               FXFormFieldTitle: @"",
-                              FXFormFieldHeader: @"Student Name"}];
+                              FXFormFieldHeader: @"Student Name",
+                              FXFormFieldDefaultValue: @""}];
     
     [fieldsArray addObject: @{FXFormFieldKey: @"lastName",
-                              FXFormFieldPlaceholder: @"Last",
-                              FXFormFieldTitle: @""}];
-    
-    [fieldsArray addObject: @{FXFormFieldKey: @"enrollmentType",
+                              FXFormFieldPlaceholder: @"Last Name",
                               FXFormFieldTitle: @"",
-                              FXFormFieldHeader: @"Freshman or Transfer?",
-                              FXFormFieldOptions: @[@"Freshman", @"Transfer"],
-                              FXFormFieldCell: [FXFormOptionSegmentsCell class]}];
+                              FXFormFieldDefaultValue: @""}];
     
     [fieldsArray addObject: @{FXFormFieldKey: @"email",
                               FXFormFieldPlaceholder: @"example@domain.com",
                               FXFormFieldTitle: @"",
                               FXFormFieldHeader: @"Email Address",
+                              FXFormFieldDefaultValue: @"",
                               FXFormFieldType: FXFormFieldTypeEmail}];
+    
+    [fieldsArray addObject: @{FXFormFieldKey: @"enrollmentType",
+                              FXFormFieldTitle: @"",
+                              FXFormFieldHeader: @"Freshman or Transfer?",
+                              FXFormFieldOptions: @[@"Freshman", @"Transfer"],
+                              FXFormFieldDefaultValue: @"",
+                              FXFormFieldCell: [FXFormOptionSegmentsCell class]}];
     
     return fieldsArray;
 }
@@ -43,7 +47,8 @@
     return @[
              @{FXFormFieldTitle: @"Submit",
                FXFormFieldHeader: @"",
-               FXFormFieldAction: @"submitManualCheckinForm"}
+               FXFormFieldAction: @"submitManualCheckinForm:",
+               }
              ];
 }
 
