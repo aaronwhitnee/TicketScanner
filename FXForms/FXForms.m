@@ -3649,7 +3649,13 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
 
 - (void)setUp
 {
+//    NSDictionary *attributes = [NSDictionary dictionaryWithObjects:@[NSBackgroundColorAttributeName] forKeys:@[[UIColor whiteColor]]];
+    
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[]];
+//    self.segmentedControl.tintColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:180.0/255.0 alpha:1.0];
+    self.segmentedControl.tintColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0];
+//    [self.segmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    self.segmentedControl.opaque = YES;
     [self.segmentedControl addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:self.segmentedControl];
     

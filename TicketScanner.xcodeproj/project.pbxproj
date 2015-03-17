@@ -12,6 +12,7 @@
 		0C11280E1AB16F7000FD8C61 /* CustomButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */; };
 		0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */; };
 		0C855A9F1AB519CB0058D450 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C855A9E1AB519CB0058D450 /* TabBarController.m */; };
+		0C855AA11AB56B100058D450 /* whistle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C855AA01AB56B100058D450 /* whistle.wav */; };
 		0C9874B21AA04DB9006A2F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B11AA04DB9006A2F9A /* main.m */; };
 		0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B41AA04DB9006A2F9A /* AppDelegate.m */; };
 		0C9874B81AA04DB9006A2F9A /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874B71AA04DB9006A2F9A /* ScannerViewController.m */; };
@@ -20,6 +21,7 @@
 		0C9874CF1AA04DB9006A2F9A /* TicketScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874CE1AA04DB9006A2F9A /* TicketScannerTests.m */; };
 		0CA73F791AAB92640049060D /* QRCodeCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA73F781AAB92640049060D /* QRCodeCaptureView.m */; };
 		0CA73F7E1AABC22C0049060D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA73F7D1AABC22C0049060D /* AVFoundation.framework */; };
+		0CB195661AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */; };
 		0CD8F6251AB2CFAC000150E2 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,7 @@
 		0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseCommunicator.m; sourceTree = "<group>"; };
 		0C855A9D1AB519CB0058D450 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		0C855A9E1AB519CB0058D450 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		0C855AA01AB56B100058D450 /* whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistle.wav; sourceTree = "<group>"; };
 		0C9874AC1AA04DB9006A2F9A /* TicketScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9874B01AA04DB9006A2F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C9874B11AA04DB9006A2F9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		0CA73F771AAB92640049060D /* QRCodeCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeCaptureView.h; sourceTree = "<group>"; };
 		0CA73F781AAB92640049060D /* QRCodeCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeCaptureView.m; sourceTree = "<group>"; };
 		0CA73F7D1AABC22C0049060D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hormones Season 2 Opening Song.mp3"; sourceTree = "<group>"; };
 		0CD8F6231AB2CFAC000150E2 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
 		0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,15 @@
 			path = TicketScanner;
 			sourceTree = "<group>";
 		};
+		0C855AA21AB56B150058D450 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */,
+				0C855AA01AB56B100058D450 /* whistle.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		0C9874A31AA04DB9006A2F9A = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +127,7 @@
 				0C11280F1AB17CE000FD8C61 /* Controllers */,
 				0CD8F6221AB2C52C000150E2 /* Views */,
 				0C9874AF1AA04DB9006A2F9A /* Supporting Files */,
+				0C855AA21AB56B150058D450 /* Audio */,
 				0C9874CB1AA04DB9006A2F9A /* TicketScannerTests */,
 				0C9874AD1AA04DB9006A2F9A /* Products */,
 				0CA73F7D1AABC22C0049060D /* AVFoundation.framework */,
@@ -174,10 +188,10 @@
 		0CD8F6221AB2C52C000150E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */,
-				0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */,
 				0CA73F771AAB92640049060D /* QRCodeCaptureView.h */,
 				0CA73F781AAB92640049060D /* QRCodeCaptureView.m */,
+				0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */,
+				0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */,
 				0CD8F6231AB2CFAC000150E2 /* ActivityIndicatorView.h */,
 				0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */,
 			);
@@ -266,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C9874C01AA04DB9006A2F9A /* Images.xcassets in Resources */,
+				0C855AA11AB56B100058D450 /* whistle.wav in Resources */,
+				0CB195661AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = TicketScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

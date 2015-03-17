@@ -26,7 +26,7 @@
     UIGraphicsEndImageContext();
     [self.tabBar setBackgroundImage:transparentImage];
     [self.tabBar setShadowImage:transparentImage];
-    self.tabBar.tintColor = [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
+    self.tabBar.tintColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -43,6 +43,7 @@
 -(BOOL) startReading {
     self.scannerMessageLabel.text = @"";
     [self.activityIndicator startAnimating];
+    
 //    NSError *readingError = [[NSError alloc] init];
 //    
 //    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -69,6 +70,17 @@
 //    
 //    [self.videoCaptureSession startRunning];
     
+    // Dummy scanned data
+    NSString *firstName = @"Aaron";
+    NSString *lastName = @"Robinson";
+    NSString *email = @"test@test.com";
+    NSString *enrollmentType = @"Transfer";
+    NSArray *dummyObjects = [NSArray arrayWithObjects:firstName, lastName, email, enrollmentType, nil];
+    
+    // Dummy data capture trigger
+    [self captureOutput:nil didOutputMetadataObjects:dummyObjects fromConnection:nil];
+    
+    // TODO: if any of the captured attributes are nil, return NO, and require student to manually enter their information
     return YES;
 }
 
@@ -79,9 +91,11 @@
 }
 
 // Called when the Scanner has successfully read data from the QR code
--(void) captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
+-(void) captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects
+       fromConnection:(AVCaptureConnection *)connection {
+    
     if (metadataObjects && [metadataObjects count]) {
-        // pass scanned metadata back to the main ScannerViewController
+        // pass scanned metadata (dummy data right now) back to the parent ScannerViewController
         if ([self.delegate respondsToSelector:@selector(acceptScannedData:)]) {
             [self.delegate acceptScannedData:metadataObjects];
         }
