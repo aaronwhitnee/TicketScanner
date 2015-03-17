@@ -21,7 +21,6 @@
 		0C9874CF1AA04DB9006A2F9A /* TicketScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9874CE1AA04DB9006A2F9A /* TicketScannerTests.m */; };
 		0CA73F791AAB92640049060D /* QRCodeCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA73F781AAB92640049060D /* QRCodeCaptureView.m */; };
 		0CA73F7E1AABC22C0049060D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA73F7D1AABC22C0049060D /* AVFoundation.framework */; };
-		0CB195661AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */; };
 		0CD8F6251AB2CFAC000150E2 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +62,6 @@
 		0CA73F771AAB92640049060D /* QRCodeCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeCaptureView.h; sourceTree = "<group>"; };
 		0CA73F781AAB92640049060D /* QRCodeCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeCaptureView.m; sourceTree = "<group>"; };
 		0CA73F7D1AABC22C0049060D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hormones Season 2 Opening Song.mp3"; sourceTree = "<group>"; };
 		0CD8F6231AB2CFAC000150E2 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
 		0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +111,6 @@
 		0C855AA21AB56B150058D450 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				0CB195651AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 */,
 				0C855AA01AB56B100058D450 /* whistle.wav */,
 			);
 			name = Audio;
@@ -281,7 +278,6 @@
 			files = (
 				0C9874C01AA04DB9006A2F9A /* Images.xcassets in Resources */,
 				0C855AA11AB56B100058D450 /* whistle.wav in Resources */,
-				0CB195661AB7FD4E0031C80E /* Hormones Season 2 Opening Song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
