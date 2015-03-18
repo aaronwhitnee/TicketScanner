@@ -2812,11 +2812,13 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 21)];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     self.textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleLeftMargin;
-    self.textField.font = [UIFont systemFontOfSize:self.textLabel.font.pointSize];
+    // override textview font size
+    self.textField.font = [UIFont systemFontOfSize:25];
     self.textField.minimumFontSize = FXFormLabelMinFontSize(self.textLabel);
-    self.textField.textColor = [UIColor colorWithRed:0.275f green:0.376f blue:0.522f alpha:1.000f];
+    // Override textfield textcolor here
+    self.textField.textColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0];
     self.textField.delegate = self;
     [self.contentView addSubview:self.textField];
     
@@ -2902,7 +2904,7 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
     if ([self.field.type isEqualToString:FXFormFieldTypeText])
     {
         self.textField.autocorrectionType = UITextAutocorrectionTypeDefault;
-        self.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+        self.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
         self.textField.keyboardType = UIKeyboardTypeDefault;
     }
     else if ([self.field.type isEqualToString:FXFormFieldTypeUnsigned])
@@ -3048,9 +3050,10 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
     self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
-    self.textView.font = [UIFont systemFontOfSize:17];
+    // override textview font size
+    self.textView.font = [UIFont systemFontOfSize:25];
     self.textView.textColor = [UIColor colorWithRed:0.275f green:0.376f blue:0.522f alpha:1.000f];
     self.textView.backgroundColor = [UIColor clearColor];
     self.textView.delegate = self;
@@ -3112,7 +3115,7 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
     if ([self.field.type isEqualToString:FXFormFieldTypeText])
     {
         self.textView.autocorrectionType = UITextAutocorrectionTypeDefault;
-        self.textView.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+        self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
         self.textView.keyboardType = UIKeyboardTypeDefault;
     }
     else if ([self.field.type isEqualToString:FXFormFieldTypeUnsigned])

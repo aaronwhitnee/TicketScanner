@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C1128081AB11B3700FD8C61 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1128071AB11B3700FD8C61 /* FXForms.m */; };
 		0C11280B1AB11D6C00FD8C61 /* ManualCheckinForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C11280A1AB11D6C00FD8C61 /* ManualCheckinForm.m */; };
-		0C11280E1AB16F7000FD8C61 /* CustomButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */; };
 		0C34386D1AA93E8B002E1ED5 /* DatabaseCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */; };
 		0C855A9F1AB519CB0058D450 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C855A9E1AB519CB0058D450 /* TabBarController.m */; };
 		0C855AA11AB56B100058D450 /* whistle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C855AA01AB56B100058D450 /* whistle.wav */; };
@@ -39,8 +38,6 @@
 		0C1128071AB11B3700FD8C61 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
 		0C1128091AB11D6C00FD8C61 /* ManualCheckinForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualCheckinForm.h; sourceTree = "<group>"; };
 		0C11280A1AB11D6C00FD8C61 /* ManualCheckinForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualCheckinForm.m; sourceTree = "<group>"; };
-		0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButtonCell.h; sourceTree = "<group>"; };
-		0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButtonCell.m; sourceTree = "<group>"; };
 		0C34386B1AA93E8B002E1ED5 /* DatabaseCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseCommunicator.h; sourceTree = "<group>"; };
 		0C34386C1AA93E8B002E1ED5 /* DatabaseCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseCommunicator.m; sourceTree = "<group>"; };
 		0C855A9D1AB519CB0058D450 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
@@ -187,8 +184,6 @@
 			children = (
 				0CA73F771AAB92640049060D /* QRCodeCaptureView.h */,
 				0CA73F781AAB92640049060D /* QRCodeCaptureView.m */,
-				0C11280C1AB16F7000FD8C61 /* CustomButtonCell.h */,
-				0C11280D1AB16F7000FD8C61 /* CustomButtonCell.m */,
 				0CD8F6231AB2CFAC000150E2 /* ActivityIndicatorView.h */,
 				0CD8F6241AB2CFAC000150E2 /* ActivityIndicatorView.m */,
 			);
@@ -299,7 +294,6 @@
 				0C9874B51AA04DB9006A2F9A /* AppDelegate.m in Sources */,
 				0C9874B81AA04DB9006A2F9A /* ScannerViewController.m in Sources */,
 				0C9874B21AA04DB9006A2F9A /* main.m in Sources */,
-				0C11280E1AB16F7000FD8C61 /* CustomButtonCell.m in Sources */,
 				0C855A9F1AB519CB0058D450 /* TabBarController.m in Sources */,
 				0C1128081AB11B3700FD8C61 /* FXForms.m in Sources */,
 				0C11280B1AB11D6C00FD8C61 /* ManualCheckinForm.m in Sources */,

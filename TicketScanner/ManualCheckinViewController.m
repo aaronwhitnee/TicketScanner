@@ -17,6 +17,7 @@
 @property(nonatomic) UIAlertView *alertView;
 @property(nonatomic) ActivityIndicatorView *activityIndicator;
 // TODO: use UIAlertController for iOS > 8, and UIAlertView for iOS < 8
+// if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
 
 -(void) displayAlertWithTitle:(NSString *)title;
 
@@ -45,15 +46,15 @@
     self.tableView.separatorColor = [UIColor blackColor];
 }
 
-//-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 30)];
-//}
-
 // Customize table section headers
 -(void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *headerView = (UITableViewHeaderFooterView*)view;
-    headerView.textLabel.font = [UIFont systemFontOfSize:16 weight:1.5];
+    headerView.textLabel.font = [UIFont systemFontOfSize:12 weight:0.5];
     headerView.textLabel.textColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0];
+}
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell<FXFormFieldCell, UITextViewDelegate> *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", cell.field);
 }
 
 -(void) submitManualCheckinForm:(UITableViewCell<FXFormFieldCell> *)cell {

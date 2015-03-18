@@ -9,8 +9,12 @@
 #import "QRCodeCaptureView.h"
 #import "ActivityIndicatorView.h"
 
-@interface QRCodeCaptureView()
+@interface QRCodeCaptureView() {
+    float activityIndicatorWidth;
+}
+
 @property(nonatomic) ActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation QRCodeCaptureView
@@ -21,6 +25,7 @@
     }
     
     self.frame = frame;
+    activityIndicatorWidth = frame.size.width;
     self.backgroundColor = [UIColor blackColor];
     
     [self addSubview:self.activityIndicator];
@@ -42,7 +47,6 @@
 
 -(BOOL) startReading {
     self.scannerMessageLabel.text = @"";
-    [self.activityIndicator startAnimating];
     
 //    NSError *readingError = [[NSError alloc] init];
 //    
@@ -77,7 +81,7 @@
     NSString *enrollmentType = @"Transfer";
     NSArray *dummyObjects = [NSArray arrayWithObjects:firstName, lastName, email, enrollmentType, nil];
     
-    // Dummy data capture trigger
+    // Dummy data-capture trigger
     [self captureOutput:nil didOutputMetadataObjects:dummyObjects fromConnection:nil];
     
     // TODO: if any of the captured attributes are nil, return NO, and require student to manually enter their information
@@ -97,6 +101,8 @@
     if (metadataObjects && [metadataObjects count]) {
         // pass scanned metadata (dummy data right now) back to the parent ScannerViewController
         if ([self.delegate respondsToSelector:@selector(acceptScannedData:)]) {
+            // show activity indicator AFTER data is scanned and begins its path through responder chain
+            [self.activityIndicator startAnimating];
             [self.delegate acceptScannedData:metadataObjects];
         }
     }
@@ -106,8 +112,8 @@
     if(_activityIndicator) {
         return _activityIndicator;
     }
-    _activityIndicator = [[ActivityIndicatorView alloc] initWithFrame:self.frame];
-    _activityIndicator.center = self.center;
+    CGRect activityIndicatorFrame = CGRectMake(0, 0, activityIndicatorWidth, activityIndicatorWidth);
+    _activityIndicator = [[ActivityIndicatorView alloc] initWithFrame:activityIndicatorFrame];
     return _activityIndicator;
 }
 

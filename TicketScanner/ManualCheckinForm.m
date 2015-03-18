@@ -7,7 +7,6 @@
 //
 
 #import "ManualCheckinForm.h"
-#import "CustomButtonCell.h"
 
 @implementation ManualCheckinForm
 
@@ -20,12 +19,15 @@
                               FXFormFieldTitle: @"",
                               FXFormFieldHeader: @"Student Name",
                               FXFormFieldDefaultValue: @"",
-                              @"backgroundColor": [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4]}];
+                              FXFormFieldType: FXFormFieldTypeText,
+                              @"backgroundColor": [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4],
+                              @"textColor": [UIColor whiteColor]}];
     
     [fieldsArray addObject: @{FXFormFieldKey: @"lastName",
                               FXFormFieldPlaceholder: @"Last Name",
                               FXFormFieldTitle: @"",
                               FXFormFieldDefaultValue: @"",
+                              FXFormFieldType: FXFormFieldTypeText,
                               @"backgroundColor": [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4]}];
     
     [fieldsArray addObject: @{FXFormFieldKey: @"email",
