@@ -6,19 +6,39 @@
 //  Copyright (c) 2015 SSU. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import "TabBarController.h"
 #import "ScannerViewController.h"
 #import "ManualCheckinFormViewController.h"
 
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // * * * * * * SETTING UP PARSE * * * * * *
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"bZGGbTQvpBgg7PdloEmwSPauZD5ti2IbTCIWEwxB"
+                  clientKey:@"WkjZlNpqWA6TQeiKujqbjTBXQT8ezN9n9onhMOfe"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // Register for Push Notitications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
+    // * * * * * * SETTING UP UI * * * * * *
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     
@@ -44,6 +64,18 @@
     self.window.rootViewController = tabs;
     
     return YES;
+}
+
+// REGISTERING FOR PARSE PUSH NOTIFICATIONS
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

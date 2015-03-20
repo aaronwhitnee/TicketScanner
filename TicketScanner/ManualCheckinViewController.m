@@ -53,10 +53,6 @@
     headerView.textLabel.textColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0];
 }
 
--(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell<FXFormFieldCell, UITextViewDelegate> *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", cell.field);
-}
-
 -(void) submitManualCheckinForm:(UITableViewCell<FXFormFieldCell> *)cell {
     self.dbCommunicator.delegate = self;
 

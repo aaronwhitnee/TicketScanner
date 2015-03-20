@@ -30,6 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
     CGRect window = [[UIScreen mainScreen] applicationFrame];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
