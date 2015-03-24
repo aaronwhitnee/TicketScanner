@@ -16,8 +16,11 @@
 @property(nonatomic) UIAlertController *alertController;
 @property(nonatomic) UIAlertView *alertView;
 @property(nonatomic) ActivityIndicatorView *activityIndicator;
+@property(nonatomic, strong, readwrite) AVAudioPlayer *whistleSound;
+
 // TODO: use UIAlertController for iOS > 8, and UIAlertView for iOS < 8
 // if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+// TODO: play whistle sound upon successful form submission
 
 -(void) displayAlertWithTitle:(NSString *)title;
 
@@ -42,7 +45,7 @@
     self.postURL = [NSURL URLWithString:@"https://docs.google.com/forms/d/1-q7M81pv8Q_c0XazDr-mrhUxWfN5nvub71VH_pA-JJk/formResponse"];
     
     self.tableView.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
-    // TODO: update colors of tableView content
+    // TODO: update colors/appearance of tableView
     self.tableView.separatorColor = [UIColor blackColor];
 }
 

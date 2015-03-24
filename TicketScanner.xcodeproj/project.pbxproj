@@ -21,7 +21,6 @@
 		0C8861951ABB9CA3002954F4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8861941ABB9CA3002954F4 /* MobileCoreServices.framework */; };
 		0C8861971ABB9CAA002954F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8861961ABB9CAA002954F4 /* QuartzCore.framework */; };
 		0C8861991ABB9CB5002954F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8861981ABB9CB5002954F4 /* Security.framework */; };
-		0C88619B1ABB9CBC002954F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C88619A1ABB9CBC002954F4 /* StoreKit.framework */; };
 		0C88619D1ABB9CC2002954F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C88619C1ABB9CC2002954F4 /* SystemConfiguration.framework */; };
 		0C88619F1ABB9CCC002954F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C88619E1ABB9CCC002954F4 /* libz.dylib */; };
 		0C8861A11ABB9CD6002954F4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8861A01ABB9CD6002954F4 /* libsqlite3.dylib */; };
@@ -65,7 +64,6 @@
 		0C8861941ABB9CA3002954F4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0C8861961ABB9CAA002954F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0C8861981ABB9CB5002954F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		0C88619A1ABB9CBC002954F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0C88619C1ABB9CC2002954F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0C88619E1ABB9CCC002954F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0C8861A01ABB9CD6002954F4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -97,7 +95,6 @@
 				0C8861A11ABB9CD6002954F4 /* libsqlite3.dylib in Frameworks */,
 				0C88619F1ABB9CCC002954F4 /* libz.dylib in Frameworks */,
 				0C88619D1ABB9CC2002954F4 /* SystemConfiguration.framework in Frameworks */,
-				0C88619B1ABB9CBC002954F4 /* StoreKit.framework in Frameworks */,
 				0C8861991ABB9CB5002954F4 /* Security.framework in Frameworks */,
 				0C8861971ABB9CAA002954F4 /* QuartzCore.framework in Frameworks */,
 				0C8861951ABB9CA3002954F4 /* MobileCoreServices.framework in Frameworks */,
@@ -158,7 +155,6 @@
 				0C8861A01ABB9CD6002954F4 /* libsqlite3.dylib */,
 				0C88619E1ABB9CCC002954F4 /* libz.dylib */,
 				0C88619C1ABB9CC2002954F4 /* SystemConfiguration.framework */,
-				0C88619A1ABB9CBC002954F4 /* StoreKit.framework */,
 				0C8861981ABB9CB5002954F4 /* Security.framework */,
 				0C8861961ABB9CAA002954F4 /* QuartzCore.framework */,
 				0C8861941ABB9CA3002954F4 /* MobileCoreServices.framework */,
@@ -300,6 +296,12 @@
 				TargetAttributes = {
 					0C9874AB1AA04DB9006A2F9A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = T66V5VNLQ8;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					0C9874C71AA04DB9006A2F9A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -464,12 +466,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TicketScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -479,11 +482,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TicketScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

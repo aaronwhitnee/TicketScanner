@@ -21,7 +21,6 @@
 @property(nonatomic, strong, readwrite) AVAudioPlayer *whistleSound;
 @property(nonatomic, strong) UILabel *firstNameLabel;
 @property(nonatomic, strong) UILabel *lastNameLabel;
-// TODO: add two UILabels for first name and last name, just below scannerView
 
 @end
 
@@ -113,7 +112,6 @@
         if ([self.scannerView startReading]) {
             self.startStopButton.alpha = 0.2;
             self.startStopButton.userInteractionEnabled = NO;
-            [self.dbCommunicator postData:self.studentAttributes toURL:self.postURL];
         }
     }
     else {
@@ -121,28 +119,35 @@
         self.startStopButton.alpha = 1.0;
         self.startStopButton.userInteractionEnabled = YES;
     }
-    self.scannerView.isReading = !self.scannerView.isReading;
 }
 
 -(void) studentDataDidFinishUploading {
+    [self playWhistleSound];
     [self startStopReading];
     NSLog(@"Scanned data uploaded to database successfully.");
 }
 
 -(void) acceptScannedData:(NSArray *)metadataObjects {
-    // TODO: Display scanned student's name on screen
-    [self playSuccessAudio];
-    self.studentAttributes = metadataObjects;
+    // TODO: play "beep" sound for valid/successful scan here...
+    
+    // Parse the scanned metadata string, split it into separate objects/strings
+    [self serializeScannedMetadata:metadataObjects];
+    
+    [self.dbCommunicator postData:self.studentAttributes toURL:self.postURL];
     
     self.firstNameLabel.text = self.studentAttributes[0];
     self.lastNameLabel.text = self.studentAttributes[1];
-    NSLog(@"Scanned Data: %@", metadataObjects);
+}
+
+-(void) serializeScannedMetadata:(NSArray *)metadata {
+    // TODO: split scanned data string into separate objects
+    NSLog(@"Scanned Data: %@", metadata);
+    self.studentAttributes = metadata;
 }
 
 - (AVAudioPlayer *)whistleSound {
     if (!_whistleSound) {
-        
-        // Prepare audio files to play
+        // Prepare audio file to play
         NSString *audioFilePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"whistle.wav"];
         NSURL *whistleUrl = [NSURL fileURLWithPath:audioFilePath];
         NSError *error;
@@ -153,7 +158,7 @@
     return _whistleSound;
 }
 
--(void) playSuccessAudio {
+-(void) playWhistleSound {
     [self.whistleSound prepareToPlay];
     [self.whistleSound play];
 }
